@@ -1169,7 +1169,7 @@ function importSyncCode() {
     const idx = S.words.findIndex(w => w.char === char);
     if (idx === -1) return;
     const local = S.words[idx];
-    if ((updatedAt || 0) > (local.updatedAt || 0)) {
+    if ((updatedAt || 0) >= (local.updatedAt || 0)) {
       S.words[idx] = { ...local, level, nextReview, correct, total, updatedAt: updatedAt || 0 };
       mergedCount++;
     }
